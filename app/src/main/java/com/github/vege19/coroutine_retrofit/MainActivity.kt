@@ -3,6 +3,7 @@ package com.github.vege19.coroutine_retrofit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initializeRetrofit()
-        recyclerViewSetUp()
         getJokes()
 
     }
@@ -51,9 +51,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getJokes() {
+        //Show progress bar while loading jokes
+        progressBar.visibility = View.VISIBLE
+        //Make api request with co-routine
         GlobalScope.launch(Dispatchers.Main) {
             try {
+                //Save our jokes
                 jokes = jokeApi.getJokes().await()
+                //Set jokes in recyclerview
                 setJokes()
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -63,6 +68,8 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun setJokes() {
         recyclerViewSetUp()
+        //Hide progress bar until data is loaded
+        progressBar.visibility =View.GONE
     }
 
 }
