@@ -25,7 +25,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_sentiment_satisfied"
-            android:padding="8dp"/>
+            android:padding="8dp"
+            android:tint="@color/colorAccent"/>
 
         <TextView
             android:id="@+id/jokeNameTxt"
@@ -39,7 +40,7 @@
             app:layout_constraintStart_toEndOf="@id/jokeImageView"
             app:layout_constraintTop_toTopOf="@id/jokeImageView"
             tools:text="Joke name"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorPrimaryText"
             android:maxLines="1"
             android:ellipsize="end"/>
 
@@ -63,6 +64,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/colorSecondaryText"
                 tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo. Iaculis eu non diam phasellus vestibulum lorem. " />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

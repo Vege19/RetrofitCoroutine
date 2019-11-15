@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         initializeRetrofit()
         getJokes()
+        refreshJokes()
 
     }
 
@@ -70,6 +71,14 @@ class MainActivity : AppCompatActivity() {
         recyclerViewSetUp()
         //Hide progress bar until data is loaded
         progressBar.visibility =View.GONE
+    }
+
+    private fun refreshJokes() {
+        refreshLayout.setOnRefreshListener {
+            jokes.clear()
+            getJokes()
+            refreshLayout.isRefreshing = false
+        }
     }
 
 }
