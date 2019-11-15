@@ -11,18 +11,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/jokeImageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            android:scaleType="centerCrop"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_sentiment_satisfied"
+            android:padding="8dp"/>
 
         <TextView
             android:id="@+id/jokeNameTxt"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -32,28 +39,31 @@
             app:layout_constraintStart_toEndOf="@id/jokeImageView"
             app:layout_constraintTop_toTopOf="@id/jokeImageView"
             tools:text="Joke name"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
+            android:textColor="@android:color/black"
+            android:maxLines="1"
+            android:ellipsize="end"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/jokeTextContainerLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/jokeImageView"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jokeImageView"
+            android:background="#FCFCFC">
 
             <TextView
                 android:id="@+id/jokeTextTxt"
+                style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo. Iaculis eu non diam phasellus vestibulum lorem. "
                 android:layout_margin="16dp"
-                style="@style/TextAppearance.AppCompat.Body1"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo. Iaculis eu non diam phasellus vestibulum lorem. " />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -30,14 +30,14 @@ class JokeAdapter(private var jokes: List<JokeModel>, private var context: Conte
         holder.name.text = joke.jokeName
         holder.text.text = joke.jokeText
         //Set image
-        Glide.with(context).load(joke.jokeImage).into(holder.image)
+        //Glide.with(context).load(joke.jokeImage).into(holder.image)
 
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val name: TextView = view.jokeNameTxt
         val image: ImageView = view.jokeImageView
-        val text: TextView = view.jokeNameTxt
+        val text: TextView = view.jokeTextTxt
         val container: ConstraintLayout = view.jokeTextContainerLayout
     }
 
